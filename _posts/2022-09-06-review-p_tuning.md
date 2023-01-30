@@ -28,6 +28,9 @@ Input sequence for the pre-trained LM is
   $$ 
     \{h_0, \ldot, h_i, embed(x), h_{i+1}, \ldot, h_m, embed(y)\}
   $$
+  $$
+    \(\{h_0, \ldot, h_i, embed(x), h_{i+1}, \ldot, h_m, embed(y)\}\)
+  $$
 where $h_i (0 \le i < m)$ are trainable embedding tensors of the prompt encoder\
 Objective function for training prompt encoder is
   $$
