@@ -25,7 +25,7 @@ Prompt encoder is 2-layers bi-directional LSTM and MLPs\
 Function of prompt $P$ is put context $x$ and target $y$ into a template $T$\
 Template $T=\lbrace [P_{0:i}],\ x,\ [P_{i+1:m},\ y]\rbrace$, where $P_i$ is prompt, $x$ is given context, and $y$ is target\
 Input sequence for the pre-trained LM is
-$$ \lbrace h_0, \ldot, h_i, embed(x), h_{i+1}, \ldot, h_m, embed(y) \rbrace $$
+$$ \left\{h_0, \ldot, h_i, embed(x), h_{i+1}, \ldot, h_m, embed(y)\right\} $$
 where $h_i (0 \le i < m)$ are trainable embedding tensors of the prompt encoder\
 Objective function for training prompt encoder is
 $$ \hat{h}_{0:m} = \argmin_h \mathcal L(\mathcal{M(x, y)}) $$
