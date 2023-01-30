@@ -23,10 +23,10 @@ Finding optimal prompt can help the pre-trained models improve their performance
 ![0](https://squiduu.github.io/assets/images/review/p_tuning/0.png)
 Prompt encoder is 2-layers bi-directional LSTM and MLPs\
 Function of prompt $P$ is put context $x$ and target $y$ into a template $T$\
-Template $T=\left{[P_{0:i}],\ x,\ [P_{i+1:m},\ y]\right}$, where $P_i$ is prompt, $x$ is given context, and $y$ is target\
+Template $T=\lbrace [P_{0:i}],\ x,\ [P_{i+1:m},\ y]\rbrace$, where $P_i$ is prompt, $x$ is given context, and $y$ is target\
 Input sequence for the pre-trained LM is
 $$
-\left{h_0, \ldot, h_i, embed(x), h_{i+1}, \ldot, h_m, embed(y)\right}
+\lbrace h_0, \ldot, h_i, embed(x), h_{i+1}, \ldot, h_m, embed(y) \rbrace
 $$
 where $h_i (0 \le i < m)$ are trainable embedding tensors of the prompt encoder\
 Objective function for training prompt encoder is
