@@ -20,27 +20,27 @@ Finding optimal prompt can help the pre-trained models improve their performance
 
 ## Main
 ### Architecture
-![0](https://squiduu.github.io/assets/img/review/p_tuning/0.png)
+![0](https://squiduu.github.io/assets/images/review/p_tuning/0.png)
 Prompt encoder is 2-layers bi-directional LSTM and MLPs\
 Function of prompt $P$ is put context $x$ and target $y$ into a template $T$\
-Template $T=\{[P_{0:i}],\ x,\ [P_{i+1:m},\ y]\}$, where $P_i$ is prompt, $x$ is given context, and $y$ is target\
+Template \(T=\{[P_{0:i}],\ x,\ [P_{i+1:m},\ y]\}\), where $P_i$ is prompt, $x$ is given context, and $y$ is target\
 Input sequence for the pre-trained LM is
-    $$
-    \{h_0, ..., h_i, embed(x), h_{i+1}, ..., h_m, embed(y)\}
-    $$
+$$
+\[{h_0, ..., h_i, embed(x), h_{i+1}, ..., h_m, embed(y)\}\]
+$$
 where $h_i (0 \le i < m)$ are trainable embedding tensors of the prompt encoder\
 Objective function for training prompt encoder is
     $$
-    \hat{h}_{0:m} = \argmin_h \mathcal{L}(\mathcal{M}(x, y))
+    \[\hat{h}_{0:m} = \argmin_h \mathcal{L}(\mathcal{M}(x, y))\]
     $$
-where $\mathcal{M}$ is a pre-trained LM\
+where \(\mathcal{M}$ is a pre-trained LM\)
 It tunes only prompt encoder, while fine-tuning tunes all the parameters of the pre-trained LM
 
 ## Experiments
 ### Results
-![1](https://squiduu.github.io/assets/img/review/p_tuning/1.png)
+![1](https://squiduu.github.io/assets/images/review/p_tuning/1.png)
 P-tuning showed better performance than other manual prompts and PET methods
-![2](https://squiduu.github.io/assets/img/review/p_tuning/2.png)
+![2](https://squiduu.github.io/assets/images/review/p_tuning/2.png)
 Pre-trained LMs have poor-transferability problems
 
 ### Discussion

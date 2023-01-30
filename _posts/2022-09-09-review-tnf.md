@@ -17,7 +17,7 @@ use_math: true
 
 ### Method
 1. Contruction of note dictionary\
-![0](https://squiduu.github.io/assets/img/review/tnf/0.png)
+![0](https://squiduu.github.io/assets/images/review/tnf/0.png)
 The left box shows the forward pass with the help of the note dictionary. In the input word sequence, $w_2$ is a rare word. Then for tokens 4 and 5 originated from $w_2$, we query the value of $w_2$ in the note dictionary and weighted average it with token/position embeddings. The right box demonstrates how we maintain the note dictionary. After the forward pass of the model, we can get the contextual representations of the word near $w_2$ and use mean pooling over those representations as the note of $w_2$ in the current sentence. Then, we update $w_2$’s value in the note dictionary by a weighted average of the current note and its previous value.
 
 2. Maintaining of note dictionary\

@@ -23,7 +23,7 @@ Caching를 이용한 recurrent 방법으로 최대 길이를 넘는 sequence 생
 
 ## Introduction
 ### Subsequence length evaluation
-![0](https://squiduu.github.io/assets/img/review/shortformer/0.png)
+![0](https://squiduu.github.io/assets/images/review/shortformer/0.png)
 실험 결과, sliding window를 적용할 경우 subsequence 길이가 1k를 넘으면 PPL 향상이 미미함.\
 실험 결과에 대한 해석:
 - 긴 subsequence로 학습한 모델은 eval set 또한 긴 subsequence로 나누어짐
@@ -51,7 +51,7 @@ Baseline으로 WikiText-103 데이터셋으로 훈련된 B&A 모델 사용\
 훈련 속도 뿐만 아니라, PPL까지 향상됨
 
 ### Experiments
-![1](https://squiduu.github.io/assets/img/review/shortformer/1.png)
+![1](https://squiduu.github.io/assets/images/review/shortformer/1.png)
 Staged training 실험 결과, 대부분의 짧은 subsequence length에서 baseline 대비 낮은 PPL 확인\
 Baseline 대비 훨씬 적은 학습 시간 소요
 
@@ -68,7 +68,7 @@ PIA 및 caching을 함께 사용하여 이전 output을 재사용함으로써 at
 이전 subsequence를 cache 해두었다가 재사용하기 때문에 epoch 마다 data shuffling 하지 않음
 
 ### Experiments
-![2](https://squiduu.github.io/assets/img/review/shortformer/2.png)
+![2](https://squiduu.github.io/assets/images/review/shortformer/2.png)
 Shortformer (Staged training + PIA + Cache) 모두 적용하여 PPL, 메모리 사용량 및 학습 시간에서 성능 우위 달성
 
 ## Conclusion

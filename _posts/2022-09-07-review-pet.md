@@ -13,12 +13,12 @@ use_math: true
 
 ## Main
 ### Architecture
-![0](https://squiduu.github.io/assets/img/review/pet/0.png)
+![0](https://squiduu.github.io/assets/images/review/pet/0.png)
 An example of PET for sentiment classification
 1. A pre-trained language model is fine-tuned with patterns from labeled training data $\mathcal{T}$
 2. Ensemble of fine-tuned models annotates unlabeled data $\mathcal{D}$
 3. A classifier is trained on the resulting soft-labeled original and additional dataset
-![1](https://squiduu.github.io/assets/img/review/pet/1.png)
+![1](https://squiduu.github.io/assets/images/review/pet/1.png)
 Schematic representation of PET and iPET
 1. Initial training set $\mathcal{T}$ is used to finetune an ensemble of pre-trained models $\mathcal{M}_n$
 2. For each model, a random subset of other models generates a new training set by labeling examples from unlabeled data $\mathcal{D}$
@@ -29,9 +29,9 @@ Schematic representation of PET and iPET
 
 ### Patterns
 Defined patterns for an input text in Yelp dataset are
-![2](https://squiduu.github.io/assets/img/review/pet/2.png)
+![2](https://squiduu.github.io/assets/images/review/pet/2.png)
 Defined verbalizer $v$ for all patterns are
-![3](https://squiduu.github.io/assets/img/review/pet/3.png)
+![3](https://squiduu.github.io/assets/images/review/pet/3.png)
 
 ### Discussion
 Introduced PET to learn with unlabeled data with labels created by ensemble of pre-trained LMs\

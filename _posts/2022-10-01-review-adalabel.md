@@ -25,8 +25,8 @@ AdaLabel 방법을 통해 dynamic하게 soft target distribution 추정 가능\
 
 ## Main
 ### Architecture
-![0](https://squiduu.github.io/assets/img/review/adalabel/0.png)
-![1](https://squiduu.github.io/assets/img/review/adalabel/1.png)
+![0](https://squiduu.github.io/assets/images/review/adalabel/0.png)
+![1](https://squiduu.github.io/assets/images/review/adalabel/1.png)
 ### Proposal
 기존 hard target distribution $q$ 대신 adaptive soft target $q'$ 제시\
 $\epsilon\in[0,1]$: an adapation factor\
@@ -54,7 +54,7 @@ Target-masked attention 도입
 Diversity 효과 증대를 위해 non-target words probabilities에서 head와 tail에 대해 truncation 진행
 - Truncating head: low-probability words에 보다 집중할 수 있게
 - Truncating tail: 지나친 low-probability words에 대해 noise 필터링
-![2](https://squiduu.github.io/assets/img/review/adalabel/2.png)
+![2](https://squiduu.github.io/assets/images/review/adalabel/2.png)
 
 ## Experiments
 ### Dataset
@@ -65,12 +65,12 @@ OpenSubtitles
 - Dialogues collected from movie subtitles
 
 ### Automatic evaluation
-![3](https://squiduu.github.io/assets/img/review/adalabel/3.png)
+![3](https://squiduu.github.io/assets/images/review/adalabel/3.png)
 
 ### Appendix
-![4](https://squiduu.github.io/assets/img/review/adalabel/4.png)
+![4](https://squiduu.github.io/assets/images/review/adalabel/4.png)
 AdaLabel이 다른 방법 대비 더 낮은 over-confidence를 보여줌
-![5](https://squiduu.github.io/assets/img/review/adalabel/5.png)
+![5](https://squiduu.github.io/assets/images/review/adalabel/5.png)
 AdaLabel이 다른 방법 대비 low-frequency words를 더 많이 생성
 
 ### GitHub
