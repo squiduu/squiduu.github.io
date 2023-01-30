@@ -16,20 +16,20 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 
 # Site Settings
 locale                   : "ko"
-title                    : "MKKIM's Blog"
+title                    : "squiduu's Blog"
 title_separator          : "-"
-name                     : "Minki Kim"
-description              : "IT's All About the Data."
-url                      : "https://mkkim85.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+name                     : "squiduu"
+description              : "The Most Detailed AI."
+url                      : "https://squiduu.github.io" # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
-repository               : "mkkim85/mkkim85.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
+repository               : "squiduu/squiduu.github.io" # GitHub username/repo-name e.g. "mmistakes/minimal-mistakes"
 teaser                   : # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 # breadcrumbs            : false # true, false (default)
 words_per_minute         : 200
 comments:
   provider               : "disqus" # false (default), "disqus", "discourse", "facebook", "google-plus", "staticman", "staticman_v2" "custom"
   disqus:
-    shortname            : mkkims-blog # https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-
+    shortname            : squiduu # https://help.disqus.com/customer/portal/articles/466208-what-s-a-shortname-
   discourse:
     server               : # https://meta.discourse.org/t/embedding-discourse-comments-via-javascript/31963 , e.g.: meta.discourse.org
   facebook:
@@ -100,11 +100,11 @@ analytics:
 
 # Site Author
 author:
-  name             : "Minki Kim"
-  avatar           : "/assets/images/bio-photo.jpg" #"/assets/images/bio-photo.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "IT's All About the Data."
+  name             : "squiduu"
+  avatar           : "/assets/images/profile_photo.jpg" #"/assets/images/bio-photo.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
+  bio              : "The Most Detailed AI."
   location         : "Korea"
-  email            : mkkim85y@gmail.com
+  email            : wootj0104@gmail.com
   uri              :
   home             : # null (default), "absolute or relative url to link to author home"
   bitbucket        :
@@ -113,7 +113,7 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           : "mkkim85"
+  github           : "squiduu"
   gitlab           :
   google_plus      :
   keybase          :

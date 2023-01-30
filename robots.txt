@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: http://mkkim85.github.io/sitemap.xml
+Sitemap: http://squiduu.github.io/sitemap.xml
