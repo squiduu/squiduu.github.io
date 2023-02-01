@@ -102,7 +102,7 @@ analytics:
 author:
   name             : "squiduu"
   avatar           : "/assets/images/profile_photo.jpg" #"/assets/images/bio-photo.jpg" # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "The Most Detailed AI."
+  bio              : "The Most Detailed AI"
   location         : "Korea"
   email            : wootj0104@gmail.com
   uri              :
