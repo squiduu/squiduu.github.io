@@ -30,27 +30,23 @@ use_math: true
 
 ## Corrective language modeling (CLM)
 - Trains the main Transformer to recover the original tokens, given the corrupted text sequence $X^{MLM}=[x_1^{orig}, ..., [MASK]_i, ..., x_n^{orig}]$
-
-  $$
+  
+  \$\$
   X^{MLM} \xrightarrow{Main Transformer} H \xrightarrow{CLM Head} p_{CLM}(x|h_i)
-  $$
+  \$\$
 
   - CLM Head uses the hidden representations $H$ to output a LM probability, instead of a binary classification score
 
-  $$
-  \begin{aligned}
+  \$\$
   p_{LM}(x_i|h_i) &= 1 \cdot (x_i=x_i^{MLM}) \cdot p_{copy}(1|h_i) + p_{copy}(0|h_i) \cdot \frac{exp(x_i^\top \cdot h_i)}{\sum_{x_i \in V}exp(x_t^\top \cdot h_i)} \\
   p_{copy}(y_i|h_i) &= \frac{exp(y_i \cdot w_{copy}^\top h_i)}{exp(w_{copy}^\top h_i)+1}
-  \end{aligned}
-  $$
+  \$\$
 
   - $p_{copy}(y_i|h_i)$ is the copy mechanism, $y_i=1$ when the input token is original and can be directly copied to the output. $y_i=0$ when the input token needs to be corrected to another token from the vocab
 
-  $$
-    \begin{aligned}
-      \mathcal{L}_{CLM} = \lambda_{copy} \cdot \mathcal{L}_{copy} + \mathcal{L}_{LM}
-    \end{aligned}
-  $$
+  \$\$
+  \mathcal{L}_{CLM} = \lambda_{copy} \cdot \mathcal{L}_{copy} + \mathcal{L}_{LM}
+  \$\$
 
 - It combines the advantages of MLM and ELECTRA
   - The main Transformer is trained on all tokens with the help of the binary classification task while also being able to predict words, enjoying the eifficiency benefits of ELECTRA and preserving the language modeling benfits
@@ -65,11 +61,9 @@ use_math: true
 - A positive pair $(X, X^+)$ consists of either $(X_k^{MLM}, X_k^{crop})$ or $(X_k^{crop}, X_k^{MLM})$, and negative instances are all the remaining sequences
 
 ## Objective function
-$$
-\begin{aligned}
+\$\$
 \mathcal{L} = \mathcal{L}_{MLM}^{Aux} + \mathcal{L}_{CLM}^{Main} + \mathcal{L}_{SCL}^{Main}
-\end{aligned}
-$$
+\$\$
 
 # Experiments
 ## Datasets

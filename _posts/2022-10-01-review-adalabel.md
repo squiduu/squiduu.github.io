@@ -40,10 +40,10 @@ use_math: true
 2. $\lambda$: a lower bound of $\epsilon$
 3. $\alpha\in[0,1]$: 더 빠른 수렴 및 low-probability words를 더 잘 학습할 수 있도록하는 relative ratio factor
 \$\$
-  p_{max}=\max_{w_k\in\mathcal{V}}p(w_k|y_{\<t},X) \
-  \epsilon=max(p_{max}, \lambda) \
-  \lambda=\frac{max(v)}{1+max(v)}+\eta \
-  \alpha=\left[\frac{p(y_t|y_{<t},X)}{p_{max}}\right]^2 \ 
+  p_{max}=\max_{w_k\in\mathcal{V}}p(w_k|y_{\<t},X) \\
+  \epsilon=max(p_{max}, \lambda) \\
+  \lambda=\frac{max(v)}{1+max(v)}+\eta \\
+  \alpha=\left[\frac{p(y_t|y_{<t},X)}{p_{max}}\right]^2 \\
   \therefore\epsilon=1-\alpha\cdot(1-max(p_{max},\lambda))
 \$\$
 

@@ -22,6 +22,6 @@ The left box shows the forward pass with the help of the note dictionary. In the
 2. Maintaining of note dictionary\
 For a rare word $w$ that appears both in the input token sequence $x = \{x_1, ..., x_i, ..., x_n\}$ and note dict, denoting the span boundary of $w$ in $x$ as $(s,t)$, where $s$ and $t$ are the starting and ending position. The note of $w$ for $x$ as
 \$\$
-    Note(w,x) = \frac{1}{2k + t - s} \sum_{j=s-k}^{t+k}\bold{c}_j
+    Note(w,x) = \frac{1}{2k + t - s} \sum_{j=s-k}^{t+k}\textbf{c}_j
 \$\$
-where $\bold{c}_j \in \mathbb{R}^d$ si the output of the encoder on position $j$ and served as the contextual representation of $x_j$, $k$ is half of the window size that controls how many surrounding tokens we want to take as notes and save their semantics.
+where $\textbf{c}_j \in \mathbb{R}^d$ si the output of the encoder on position $j$ and served as the contextual representation of $x_j$, $k$ is half of the window size that controls how many surrounding tokens we want to take as notes and save their semantics.
