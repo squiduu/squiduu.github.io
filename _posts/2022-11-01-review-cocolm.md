@@ -30,9 +30,13 @@ use_math: true
 
 ## Corrective language modeling (CLM)
 - Trains the main Transformer to recover the original tokens, given the corrupted text sequence $X^{MLM}=[x_1^{orig}, ..., [MASK]_i, ..., x_n^{orig}]$
+
 $$
-  X^{MLM} \xrightarrow{Main Transformer} H \xrightarrow{CLM Head} p_{CLM}(x|h_i)
+  \begin{align*}
+    X^{MLM} \xrightarrow{Main Transformer} H \xrightarrow{CLM Head} p_{CLM}(x|h_i)
+  \end{align*}
 $$
+
   - CLM Head uses the hidden representations $H$ to output a LM probability, instead of a binary classification score
 
 $$
@@ -42,7 +46,7 @@ $$
 \end{align*}
 $$
 
-$p_{copy}(y_i|h_i)$ is the copy mechanism, $y_i=1$ when the input token is original and can be directly copied to the output; $y_i=0$ when the input token needs to be corrected to another token from the vocab
+  - $p_{copy}(y_i|h_i)$ is the copy mechanism, $y_i=1$ when the input token is original and can be directly copied to the output. $y_i=0$ when the input token needs to be corrected to another token from the vocab
 
 $$
   \begin{align*}
