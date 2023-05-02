@@ -44,11 +44,11 @@ use_math: true
   p_{copy}(y_i|h_i) = \frac{exp(y_i \cdot w_{copy}^\top h_i)}{exp(w_{copy}^\top h_i)+1}
   \$\$
 
-  - $p_{copy}(y_i|h_i)$ is the copy mechanism, $y_i=1$ when the input token is original and can be directly copied to the output. $y_i=0$ when the input token needs to be corrected to another token from the vocab
+  where $p_{copy}(y_i\|h_i)$ is the copy mechanism, $y_i=1$ when the input token is original and can be directly copied to the output. $y_i=0$ when the input token needs to be corrected to another token from the vocab
 
-  $$
+  \$\$
   \mathcal{L}_{CLM} = \lambda_{copy} \cdot \mathcal{L}_{copy} + \mathcal{L}_{LM}
-  $$
+  \$\$
 
 - It combines the advantages of MLM and ELECTRA
   - The main Transformer is trained on all tokens with the help of the binary classification task while also being able to predict words, enjoying the eifficiency benefits of ELECTRA and preserving the language modeling benfits
@@ -63,9 +63,9 @@ use_math: true
 - A positive pair $(X, X^+)$ consists of either $(X_k^{MLM}, X_k^{crop})$ or $(X_k^{crop}, X_k^{MLM})$, and negative instances are all the remaining sequences
 
 ## Objective function
-$$
+\$\$
 \mathcal{L} = \mathcal{L}_{MLM}^{Aux} + \mathcal{L}_{CLM}^{Main} + \mathcal{L}_{SCL}^{Main}
-$$
+\$\$
 
 # Experiments
 ## Datasets
