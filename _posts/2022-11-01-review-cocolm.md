@@ -38,8 +38,8 @@ use_math: true
   - CLM Head uses the hidden representations $H$ to output a LM probability, instead of a binary classification score
 
   \$\$
-  p_{LM}(x_i|h_i) &= 1 \cdot (x_i=x_i^{MLM}) \cdot p_{copy}(1|h_i) + p_{copy}(0|h_i) \cdot \frac{exp(x_i^\top \cdot h_i)}{\sum_{x_i \in V}exp(x_t^\top \cdot h_i)} \\
-  p_{copy}(y_i|h_i) &= \frac{exp(y_i \cdot w_{copy}^\top h_i)}{exp(w_{copy}^\top h_i)+1}
+  p_{LM}(x_i|h_i) = 1 \cdot (x_i=x_i^{MLM}) \cdot p_{copy}(1|h_i) + p_{copy}(0|h_i) \cdot \frac{exp(x_i^\top \cdot h_i)}{\sum_{x_i \in V}exp(x_t^\top \cdot h_i)} \\
+  p_{copy}(y_i|h_i) = \frac{exp(y_i \cdot w_{copy}^\top h_i)}{exp(w_{copy}^\top h_i)+1}
   \$\$
 
   - $p_{copy}(y_i|h_i)$ is the copy mechanism, $y_i=1$ when the input token is original and can be directly copied to the output. $y_i=0$ when the input token needs to be corrected to another token from the vocab
