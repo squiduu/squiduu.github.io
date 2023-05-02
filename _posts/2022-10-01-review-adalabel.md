@@ -1,5 +1,5 @@
 ---
-title:  "[논문 리뷰] Diversifying Dialog Generation via Adaptive Label Smoothing (AdaLabel)"
+title: "[논문 리뷰] Diversifying Dialog Generation via Adaptive Label Smoothing (AdaLabel)"
 tags:
   - Dialogue Generation
 use_math: true
@@ -8,8 +8,7 @@ use_math: true
 ### Information
 > Task: Dialogue Generation \
 > Publisher: ACL \
-> Year: 2021 \
-> [Paper Link](https://arxiv.org/pdf/2105.14556.pdf)
+> Year: 2021
 
 ## Abstract
 ### Motivation
@@ -20,28 +19,33 @@ use_math: true
 3. 기존 soft target labeling 방법은 context끼리 다 분리되어 있거나, random 또는 uniform distribution을 사용
 
 ### Contribution
-AdaLabel 방법을 통해 dynamic하게 soft target distribution 추정 가능\
-기존 문제점인 over-confidence 완화 가능
+1. AdaLabel 방법을 통해 dynamic하게 soft target distribution 추정 가능
+2. 기존 문제점인 over-confidence 완화 가능
 
 ## Main
 ### Architecture
 ![0](https://squiduu.github.io/assets/images/review/adalabel/0.png)
 ![1](https://squiduu.github.io/assets/images/review/adalabel/1.png)
+
 ### Proposal
-기존 hard target distribution $q$ 대신 adaptive soft target $q'$ 제시\
-$\epsilon\in[0,1]$: an adapation factor\
-$v$: an auxiliary distribution vector
-$$q' = {\epsilon}{\cdot}q+(1-{\epsilon}){\cdot}v$$
+1. 기존 hard target distribution $q$ 대신 adaptive soft target $q'$ 제시
+2. $\epsilon\in[0,1]$: an adapation factor
+3. $v$: an auxiliary distribution vector
+\$\$
+  q' = {\epsilon}{\cdot}q+(1-{\epsilon}){\cdot}v
+\$\$
 
 ### Target word probability
-위 proposed formula의 각 term을 구하기 방법 제시\
-$\lambda$: a lower bound of $\epsilon$\
-$\alpha\in[0,1]$: 더 빠른 수렴 및 low-probability words를 더 잘 학습할 수 있도록하는 relative ratio factor
-$$p_{max}=\max_{w_k\in\mathcal{V}}p(w_k|y_{<t},X)$$
-$$\epsilon=max(p_{max}, \lambda)$$
-$$\lambda=\frac{max(v)}{1+max(v)}+\eta$$
-$$\alpha=\left[\frac{p(y_t|y_{<t},X)}{p_{max}}\right]^2$$
-$$\therefore\epsilon=1-\alpha\cdot(1-max(p_{max},\lambda))$$
+1. 위 proposed formula의 각 term을 구하기 방법 제시
+2. $\lambda$: a lower bound of $\epsilon$
+3. $\alpha\in[0,1]$: 더 빠른 수렴 및 low-probability words를 더 잘 학습할 수 있도록하는 relative ratio factor
+\$\$
+  p_{max}=\max_{w_k\in\mathcal{V}}p(w_k|y_{\<t},X) \
+  \epsilon=max(p_{max}, \lambda) \
+  \lambda=\frac{max(v)}{1+max(v)}+\eta \
+  \alpha=\left[\frac{p(y_t|y_{<t},X)}{p_{max}}\right]^2 \ 
+  \therefore\epsilon=1-\alpha\cdot(1-max(p_{max},\lambda))
+\$\$
 
 ### Non-target words probabilities
 Target-masked attention 도입
@@ -69,8 +73,10 @@ OpenSubtitles
 
 ### Appendix
 ![4](https://squiduu.github.io/assets/images/review/adalabel/4.png)
+
 AdaLabel이 다른 방법 대비 더 낮은 over-confidence를 보여줌
 ![5](https://squiduu.github.io/assets/images/review/adalabel/5.png)
+
 AdaLabel이 다른 방법 대비 low-frequency words를 더 많이 생성
 
 ### GitHub

@@ -1,15 +1,14 @@
 ---
-title:  "[논문 리뷰] Shortformer: Better Language Modeling Using Shorter Inputs"
+title: "[논문 리뷰] Shortformer: Better Language Modeling Using Shorter Inputs"
 tags:
   - Language Modeling
 use_math: true
 ---
 
 ### Information
-> Task: Language modeling \
+> Task: Language Modeling \
 > Publisher: ACL \
-> Year: 2021 \
-> [Paper Link](https://arxiv.org/pdf/2012.15832.pdf)
+> Year: 2021
 
 ## Abstract
 ### Motivation
@@ -24,6 +23,7 @@ Caching를 이용한 recurrent 방법으로 최대 길이를 넘는 sequence 생
 ## Introduction
 ### Subsequence length evaluation
 ![0](https://squiduu.github.io/assets/images/review/shortformer/0.png)
+
 실험 결과, sliding window를 적용할 경우 subsequence 길이가 1k를 넘으면 PPL 향상이 미미함.\
 실험 결과에 대한 해석:
 - 긴 subsequence로 학습한 모델은 eval set 또한 긴 subsequence로 나누어짐
@@ -52,6 +52,7 @@ Baseline으로 WikiText-103 데이터셋으로 훈련된 B&A 모델 사용\
 
 ### Experiments
 ![1](https://squiduu.github.io/assets/images/review/shortformer/1.png)
+
 Staged training 실험 결과, 대부분의 짧은 subsequence length에서 baseline 대비 낮은 PPL 확인\
 Baseline 대비 훨씬 적은 학습 시간 소요
 
@@ -69,6 +70,7 @@ PIA 및 caching을 함께 사용하여 이전 output을 재사용함으로써 at
 
 ### Experiments
 ![2](https://squiduu.github.io/assets/images/review/shortformer/2.png)
+
 Shortformer (Staged training + PIA + Cache) 모두 적용하여 PPL, 메모리 사용량 및 학습 시간에서 성능 우위 달성
 
 ## Conclusion
@@ -76,5 +78,5 @@ Training dataset의 sequence 길이를 기준으로 점점 늘려가며 학습�
 PIA 및 caching은 end-to-end 학습을 위해 보류\
 PPL은 staged training 방법만으로도 충분하다고 판단
 
-### GitHub
+## GitHub
 [https://github.com/ofirpress/shortformer](https://github.com/ofirpress/shortformer)

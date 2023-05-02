@@ -1,15 +1,14 @@
 ---
-title:  "[논문 리뷰] ALBERT: A Lite BERT For Self-Supervised Learning of Language Representations"
+title: "[논문 리뷰] ALBERT: A Lite BERT For Self-Supervised Learning of Language Representations"
 tags:
   - Language Modeling
 use_math: true
 ---
 
 ### Information
-> Task: Language modeling \
+> Task: Language Modeling \
 > Publisher: ICLR \
-> Year: 2020 \
-> [Paper Link](https://arxiv.org/pdf/1909.11942.pdf)
+> Year: 2020
 
 ### Goal
 기존 language model의 크기가 너무 커져서 GPU 메모리 및 학습 시간을 비롯한 cost가 매우 중요한 문제로 대두되었다. 이 문제를 해결하기 위해서, 작은 크기의 language model을 만들고자 한다.
@@ -20,7 +19,7 @@ Embedding parameter을 두개의 작은 matrix로 나눈다. 기존에는 one-ho
 $\rightarrow O(V\times E + E\times H)$ , when $H>>E$
 
 2. Cross-layer parameter sharing\
-![0](https://squiduu.github.io/assets/images/review/albert/0.png)
+![0](https://squiduu.github.io/assets/images/review/albert/0.png)\
 FFN (Feed-Forward Network) 및 Attention module의 파라미터를 모두 sharing한다. 파라미터 sharing 한 결과 layer 간의 transfer가 smooth 하다는 것을 보였다. 이로써 sharing parameter는 stablizing network parameter에 효과가 있음을 보였다.
 
 3. Self-supervised loss for SOP (Sentence Order Prediction)\
@@ -31,19 +30,19 @@ GLUE (The General Language Understanding Evaluation), SQuAD (Stanford Question A
 
 ### Results
 1. NLU 성능\
-![1](https://squiduu.github.io/assets/images/review/albert/1.png)
+![1](https://squiduu.github.io/assets/images/review/albert/1.png)\
 기존 BERT 와 비교했을 때 parameter efficiency 와 speen of data throughput at training time 에서 우세한 성능을 보였다.
 
 2. Cross-layer 방식에 따른 성능 비교\
-![2](https://squiduu.github.io/assets/images/review/albert/2.png)
+![2](https://squiduu.github.io/assets/images/review/albert/2.png)\
 Embedding size 를 128 했을 때 가장 좋은 성능을 보이고, cross layer 했을 때 성능 저하가 크게 나타나지 않음을 보였다.
 
 3. SOP (Sentence Order prediction) 효과 비교\
-![3](https://squiduu.github.io/assets/images/review/albert/3.png)
+![3](https://squiduu.github.io/assets/images/review/albert/3.png)\
 기존 BERT 에서 사용하는 NSP 보다 나은 성능을 보인다.
 
 4. Same-time training 성능 비교\
-![4](https://squiduu.github.io/assets/images/review/albert/4.png)
+![4](https://squiduu.github.io/assets/images/review/albert/4.png)\
 기존 BERT 와 같은 시간 training 을 했을 경우 모두 더 좋은 성능을 내었다.
 
 ### Conclusion
